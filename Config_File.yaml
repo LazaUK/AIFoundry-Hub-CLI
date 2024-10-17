@@ -1,0 +1,13 @@
+$schema: https://azuremlschemas.azureedge.net/latest/workspace.schema.json
+
+# Name and description details of AI Studio Hub resource
+name: Demo_AI_Hub
+display_name: Demo AI Hub
+description: AI Hub provisioned with existing dependent resources (Storage and Key Vault)
+
+# Target location (Azure region) of AI Studio Hub resource
+location: swedencentral
+
+# Existing dependant resources. Please, replace <..> with your resource details
+storage_account: /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Storage/storageAccounts/<STORAGE_ACCOUNT>
+key_vault: /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.KeyVault/vaults/<KEY_VAULT>
