@@ -33,16 +33,21 @@ az ml workspace create --kind hub --resource-group <RESOURCE_GROUP_NAME> --name 
 az storage account show --name <STORAGE_NAME> --query "id"
 ```
 > [!Note]
-> returned Resource ID should be in this format: _/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Storage/storageAccounts/<STORAGE_ACCOUNT>_
+> Returned Storage account's **Resource ID** should look like this: _/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Storage/storageAccounts/<STORAGE_ACCOUNT>_
 2. If you already have an existing **Azure Kay Vault**, you can retrieve its Resource ID either from Azure portal, or by existing the following Az CLI command:
 ``` PowerShell
 az keyvault show --name <KEYVAULT_NAME> --query "id"
 ```
 > [!Note]
-> returned Resource ID should be in this format: _/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.KeyVault/vaults/<KEY_VAULT>_
+> Returned Key Vault's **Resource ID** should look like this: _/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.KeyVault/vaults/<KEY_VAULT>_
 3. You can pass Resource IDs from the above steps to use existing Storage and Key Vault as default dependant resources for the new Hub resource in the following Az CLI command:
 ``` PowerShell
 az ml workspace create --kind hub --resource-group <RESOURCE_GROUP_NAME> --name <HUB_NAME> --display-name <HUB_DISPLAY_NAME> --description <HUB_DESCRIPTION> --location <HUB_AZURE_REGION> --storage-account <STORAGE_RESOURCE_ID> --key-vault <KEYVAULT_RESOURCE_ID>
 ```
 
 ## Scenario 3: Hub creation with existing dependant resources - YAML config
+1. Using long CLI commands with long Resource IDs as shown in Scenario 2 may be error-prone. You may consider defining required values in YAML format, as shown in attached ```Config_File.yaml``` file.
+2. You can create then a new Hub resource with existing Storage and Key Vault resources using the following Az CLI command:
+``` PowerShell
+az ml workspace create -g <RESOURCE_GROUP_NAME> --file <YAML_CONFIGURATION_FILE>
+```
