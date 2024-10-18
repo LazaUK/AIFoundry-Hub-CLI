@@ -46,7 +46,7 @@ az ml workspace create --kind hub --resource-group <RESOURCE_GROUP_NAME> --name 
 ```
 
 ## Scenario 3: Hub creation with existing dependent resources - YAML config
-1. Using long CLI commands with long Resource IDs as shown in Scenario 2 can be error-prone. You can define required values in YAML format, as per the attached ```Config_File.yaml``` file.
+1. Using long CLI commands with long Resource IDs as shown in Scenario 2 can be error-prone. You can define required values in YAML format instead, as per the attached ```Config_File.yaml``` file.
 2. You can then create a new Hub resource with existing Storage and Key Vault resources using the following Azure CLI command:
 ``` PowerShell
 az ml workspace create -g <RESOURCE_GROUP_NAME> --file <YAML_CONFIGURATION_FILE>
