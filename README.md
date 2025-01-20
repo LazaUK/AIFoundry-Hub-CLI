@@ -1,17 +1,17 @@
-# Azure AI Studio: Creating Hub resource with Azure CLI
-This repo explains how to use the **_Command Line Interface (CLI)_** to create an Azure AI Studio _hub_ resource. It shows how to deploy a Hub with auto-generated dependent resources like Azure Storage and Azure Key Vault, as well as how to create a new Hub and integrate it with already existing Storage and Key Vault.
+# Azure AI Foundry: Creating Hub resource with Azure CLI
+This repo explains how to use the **_Command Line Interface (CLI)_** to create an Azure AI Foundry _hub_ resource. It shows how to deploy a Hub with auto-generated dependent resources like Azure Storage and Azure Key Vault, as well as how to create a new Hub and integrate it with already existing Storage and Key Vault.
 
 > [!WARNING]
-> You can create an Azure AI Studio hub with an existing Azure Storage account only if:
+> You can create an Azure AI Foundry hub with an existing Azure Storage account only if:
 > - The Storage account uses the _Standard_ performance tier, not _Premium_,
 > - Both _Blob_ and _File_ service capabilities are enabled,
 > - If storage is of _Azure Data Lake Storage_ type, then its _Hierarchical namespace_ feature is disabled.
 
 ## Table of contents:
-- [Pre-requisites](https://github.com/LazaUK/AIStudio-Hub-CLI#pre-requisites)
-- [Scenario 1: Hub creation with bare minimum configuration](https://github.com/LazaUK/AIStudio-Hub-CLI#scenario-1-hub-creation-with-bare-minimum-configuration)
-- [Scenario 2: Hub creation with existing dependent resources - CLI flags](https://github.com/LazaUK/AIStudio-Hub-CLI#scenario-2-hub-creation-with-existing-dependent-resources---cli-flags)
-- [Scenario 3: Hub creation with existing dependent resources - YAML config](https://github.com/LazaUK/AIStudio-Hub-CLI#scenario-3-hub-creation-with-existing-dependent-resources---yaml-config)
+- [Pre-requisites](https://github.com/LazaUK/AIFoundry-Hub-CLI#pre-requisites)
+- [Scenario 1: Hub creation with bare minimum configuration](https://github.com/LazaUK/AIFoundry-Hub-CLI#scenario-1-hub-creation-with-bare-minimum-configuration)
+- [Scenario 2: Hub creation with existing dependent resources - CLI flags](https://github.com/LazaUK/AIFoundry-Hub-CLI#scenario-2-hub-creation-with-existing-dependent-resources---cli-flags)
+- [Scenario 3: Hub creation with existing dependent resources - YAML config](https://github.com/LazaUK/AIFoundry-Hub-CLI#scenario-3-hub-creation-with-existing-dependent-resources---yaml-config)
 
 ## Pre-requisites
 1. To follow these steps, you'll need:
@@ -21,7 +21,7 @@ This repo explains how to use the **_Command Line Interface (CLI)_** to create a
 2. Use the ```az login``` command to authenticate with your Azure subscription using your Entra ID credentials.
 
 ## Scenario 1: Hub creation with bare minimum configuration
-1. You can create an Azure AI Studio hub with the following Az CLI command by providing values for only two mandatory parameters: **Resource Group** and **Hub** name:
+1. You can create an Azure AI Foundry hub with the following Az CLI command by providing values for only two mandatory parameters: **Resource Group** and **Hub** name:
 ``` PowerShell
 az ml workspace create --kind hub --resource-group <RESOURCE_GROUP_NAME> --name <AI_HUB_NAME>
 ```
